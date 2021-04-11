@@ -1,0 +1,247 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+/*Gerneral styles*/
+body {
+    background: url(/img/nam_bg.jpg) 0 0 no-repeat;
+    background-size: cover;
+}
+
+.footer {
+    background: white;
+}
+
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    /*margin-bottom: 60px;*/   
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+/*form styling*/
+.form-title-large {
+    font-weight:600;
+}
+.form-title-small {
+    font-size:.9em;
+    font-weight: 400;
+}
+.location-span {
+    font-weight:300;
+    color:#666666;
+}
+.form-coords-check {
+    margin-top: 1.5rem;
+}
+/*.form-summary {
+    font-size: .8em;
+}*/
+.entry:not(:first-of-type) {
+    margin-top: 10px;
+}
+
+.glyphicon {
+    font-size: 12px;
+}
+/*Battle*/
+.battl_part_span {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+.battle_part_flag {
+    height: 10px;
+    width: 16px;
+}
+
+
+/* War */
+.wars {
+    
+}
+
+.war-link :hover {
+    text-decoration: none;
+}
+
+.war-card {
+    height: 200px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
+.war-options {
+    padding: 5px;
+    background: #404040;
+    border-radius: 4px;
+    width: 145px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.war_image {
+    width: 100%;
+}
+.war_url {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.war_participants {
+    display: flex;
+    justify-content: space-evenly;
+}
+.war_flags {
+    height: 14px;
+    width: 20px;
+}
+
+/*Participants*/
+.part_flag {
+    height: 24px;
+    width: 40px;
+}
+.bootstrap-tagsinput {
+    overflow: hidden;
+    border: solid 1px lightgrey;
+    border-radius: 4px;
+    padding: 7px;
+}
+.bootstrap-tagsinput input {
+    border: none !important;
+    outline: none !important;
+}
+.commandertags .label-info {
+ background: royalblue;
+}
+.strengthtags .label-info {
+    background: green;
+}
+.lossestags .label-info {
+    background: darkred;
+}
+.label-info {
+    background-color: #5bc0de;
+    display: inline-block;
+    padding: 0.2em 0.6em 0.3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25em;
+}
+.bootstrap-tagsinput .tag [data-role="remove"]:after {
+    content: " x";
+    padding: 0px 0 0 4px;
+    cursor:pointer;
+}
+
+
+/*change light/dark mode*/
+/*map*/
+.map_overlay {
+    /*height: 100%;*/
+    position: absolute;
+    /*background: white;*/
+    z-index: 999;
+}
+
+.bm_head {
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    margin-bottom: 20px;
+}
+.war, .title, .date, .outcome, .flags, .commanders, .strength, .loss {
+    text-align:center;
+}
+
+.bm_body {
+    display: flex;
+    margin-bottom: 20px;
+}
+.bm_body .side_a{
+    flex:1;
+}
+.bm_body .side_b {
+    flex: 1;
+}
+
+
+.bm_foot {
+    display: flex;
+    flex-flow: column;
+}
+.outcome {    
+}
+.link {
+    align-self: flex-end;
+}

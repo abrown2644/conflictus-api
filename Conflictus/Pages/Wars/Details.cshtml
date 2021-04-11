@@ -1,0 +1,68 @@
+﻿@page
+@model Conflictus.Pages.Wars.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+
+    var partsofA = new List<string>();
+    var partsofB = new List<string>();
+}
+
+<p>Details</p>
+
+<div>
+    <h2>@Model.War.Name</h2>
+    <hr />
+    <div>
+        <img class="war_image" src="@Model.War.ImageUrl" />
+    </div>
+    <div>
+        <h2 class="text-center">@Model.War.Date</h2>
+    </div>
+    <div class="war_participants">
+        <div class="war_sideA">
+            @foreach (var battle in Model.War.Battles)
+            {
+                foreach (var part in battle.SideA.Participants)
+                {
+                    if (!partsofA.Contains(part.Name))
+                    {
+                        <div class="war_sideA__item">
+                            <img class="war_flags" src="@part.FlagUrl" />
+                            <span>@part.Name</span>
+                        </div>
+                    }
+
+                    partsofA.Add(part.Name);
+                }
+            }
+        </div>
+        <div class="war_sideB">
+            @foreach (var battle in Model.War.Battles)
+            {
+                foreach (var part in battle.SideB.Participants)
+                {
+                    if (!partsofB.Contains(part.Name))
+                    {
+                        <div class="war_sideB__item">
+                            <img class="war_flags" src="@part.FlagUrl" />
+                            <span>@part.Name</span>
+                        </div>
+                    }
+
+                    partsofB.Add(part.Name);
+                }
+            }
+        </div>
+    </div>
+    <div>
+        <p>@Model.War.Summary</p>
+    </div>
+    <div>
+        <a class="war_url" href="@Model.War.Url">View on Wikipedia</a>
+    </div>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.War.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

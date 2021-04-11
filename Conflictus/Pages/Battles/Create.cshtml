@@ -1,0 +1,167 @@
+﻿@page
+@model Conflictus.Pages.Battles.CreateModel
+@{
+}
+
+<div class="container" style="padding:30px;">
+    <div class="row">
+        <div class="col-md-10 col-8">
+            <h2 class="text-dark">Create Battle</h2>
+        </div>
+        <div class="col-md-2 col-4">
+            <a asp-page="./Index" class="btn btn-secondary form-control text-white">Back</a>
+        </div>
+    </div>
+    <br />
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-md-5 col-12">
+                <label asp-for="Battle.Title" class="form-title-large"></label>
+                <input asp-for="Battle.Title" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="Battle.Title"></span>
+            <div class="col-md-4 col-8">
+                <label class="form-title-large">Date</label>
+                <input placeholder="ex. 04 April 1995" asp-for="Battle.Date" class="form-control" />
+            </div>
+            <div class="col-md-3 col-4">
+                <label class="form-title-large">Year</label>
+                <input asp-for="Battle.Year" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-4 col-8">
+                <label class="control-label">War</label>
+                @*<select asp-for="Battle.WarId" class="form-control" asp-items="ViewBag.WarId"></select>*@
+                <select asp-for="Battle.WarId" class="form-control selectpicker" asp-items=@(new MultiSelectList(Model.Wars, "Id", "Name")) data-live-search="true"></select>
+            </div>
+            <div class="col-md-2 col-4">
+                <label class="control-label">Type</label>
+                <select asp-for="Battle.Type" class="form-control" asp-items="ViewBag.Type">
+                    <option value="land">Land</option>
+                    <option value="air">Air</option>
+                    <option value="sea">Sea</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6 col-12">
+                <label class="form-summary form-summary form-title-large">Summary</label>
+                <textarea style="height: 300px;" asp-for="Battle.Summary" class="form-control"></textarea>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        <label class="form-title-large">Image</label>
+                        <input asp-for="Battle.ImageUrl" class="form-control" />
+                    </div>
+                    <div class="col-md-12 col-12">
+                        <label class="form-title-large">Wiki Url</label>
+                        <input asp-for="Battle.Url" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        <label class="form-title-large">Location<span class="location-span"> (check box if coordinates)</span></label>
+                        <input asp-for="Battle.Location.Description" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 col-2">
+                        <label class="form-title-small">(check)</label>
+                        <input type="checkbox" asp-for="Battle.Location.HasCoordinates" class="form-control" />
+                    </div>
+                    <div class="col-md-5 col-5">
+                        <label class="form-title-small">Latitude</label>
+                        <input asp-for="Battle.Location.Latitude" class="form-control" />
+                        <span class="text-danger" asp-validation-for="Battle.Location.Latitude"></span>
+                    </div>
+                    <div class="col-md-5 col-5">
+                        <label class="form-title-small">Longitude</label>
+                        <input asp-for="Battle.Location.Longitude" class="form-control" />
+                        <span class="text-danger" asp-validation-for="Battle.Location.Longitude"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6 col-12">
+                <h5 class="text-center">Side A</h5>
+                <div class="col-12">
+                    <label class="form-title-small">Participants</label>
+                    <select asp-for="PartAIds" class="form-control selectpicker" multiple data-live-search="true">
+                        @foreach (var participant in Model.Participants)
+                        {
+                            <option value="@participant.Id" data-content="<span class='battle_part_span'><img class='battle_part_flag' src='@participant.FlagUrl'/>&nbsp;@participant.Name</span>"></option>
+                        }
+                    </select>
+                </div>
+                <div class="col-12 commandertags">
+                    <label class="form-title-small">Commanders</label>
+                    <input asp-for="Battle.SideA.Commanders" class="no-border" data-role="tagsinput" />
+                </div>
+                <div class="col-12 strengthtags">
+                    <label class="form-title-small">Strength</label>
+                    <input asp-for="Battle.SideA.Strength" class="form-control" data-role="tagsinput" />
+                </div>
+                <div class="col-12 lossestags">
+                    <label class="form-title-small">Losses</label>
+                    <input asp-for="Battle.SideA.Losses" class="form-control" data-role="tagsinput" />
+                </div>
+                <div class="col-12">
+                    <label class="form-title-small">Side A Victory</label>
+                    <input type="checkbox" asp-for="Battle.SideA.Victory" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <h5 class="text-center">Side B</h5>
+                <div class="col-12">
+                    <label class="form-title-small">Participants</label>
+                    <select asp-for="PartBIds" class="form-control selectpicker" data-live-search="true">
+                        @*asp-items=@(new MultiSelectList(Model.Participants, "Id", "Name"))*@
+                        @foreach (var participant in Model.Participants)
+                        {
+                            <option value="@participant.Id" data-content="<span class='battle_part_span'><img class='battle_part_flag' src='@participant.FlagUrl'/>&nbsp;@participant.Name</span>"></option>
+                        }
+                    </select>
+                </div>
+                <div class="col-12 commandertags">
+                    <label class="form-title-small">Commanders</label>
+                    <input asp-for="Battle.SideB.Commanders" class="form-control" data-role="tagsinput" />
+                </div>
+                <div class="col-12 strengthtags">
+                    <label class="form-title-small">Strength</label>
+                    <input asp-for="Battle.SideB.Strength" class="form-control" data-role="tagsinput" />
+                </div>
+                <div class="col-12 lossestags">
+                    <label class="form-title-small">Losses</label>
+                    <input asp-for="Battle.SideB.Losses" class="form-control" data-role="tagsinput" />
+                </div>
+                <div class="col-12">
+                    <label class="form-title-small">Side B Victory</label>
+                    <input type="checkbox" asp-for="Battle.SideB.Victory" class="form-control checkbox checkbox-primary" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6 col-12">
+                <h5 class="text-center">Outcome</h5>
+                <textarea asp-for="Battle.Outcome" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Create" class="btn btn-primary form-control" />
+            </div>
+            <div class="col-3">
+                <a asp-page="Index" class="btn btn-secondary form-control">Back to List</a>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

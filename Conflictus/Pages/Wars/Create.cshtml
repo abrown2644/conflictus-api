@@ -1,0 +1,67 @@
+﻿@page
+@model Conflictus.Pages.Wars.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create War</h1>
+<hr />
+<div class="container">            
+    <form method="post">
+        <div class="form-group row">
+            <div class="col-md-4 col-12">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="War.Name" class="control-label"></label>
+                    <input asp-for="War.Name" class="form-control" />
+                    <span asp-validation-for="War.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="War.Date" class="control-label"></label>
+                    <input asp-for="War.Date" class="form-control" />
+                    <span asp-validation-for="War.Date" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-8 col-12">
+                <div class="form-group">
+                    <label asp-for="War.Url" class="control-label"></label>
+                    <input asp-for="War.Url" class="form-control" />
+                    <span asp-validation-for="War.Url" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="War.ImageUrl" class="control-label"></label>
+                    <input asp-for="War.ImageUrl" class="form-control" />
+                    <span asp-validation-for="War.ImageUrl" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label asp-for="War.Summary" class="control-label"></label>                    
+                    <textarea style="height: 300px;" asp-for="War.Summary" class="form-control"></textarea>
+                    <span asp-validation-for="War.Summary" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <a class="btn btn-secondary" asp-page="Index">Back</a>
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+</form>        
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('form').keydown(function (event) {
+                if (event.keyCode == 13) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        });
+    </script>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
