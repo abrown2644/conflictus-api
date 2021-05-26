@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\code\\personal\\Conflictus\\Conflictus\\Conflictus.csproj": {}
+    "C:\\code\\projects\\conflictus-api\\Conflictus\\Conflictus.csproj": {}
   },
   "projects": {
-    "C:\\code\\personal\\Conflictus\\Conflictus\\Conflictus.csproj": {
+    "C:\\code\\projects\\conflictus-api\\Conflictus\\Conflictus.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\code\\personal\\Conflictus\\Conflictus\\Conflictus.csproj",
+        "projectUniqueName": "C:\\code\\projects\\conflictus-api\\Conflictus\\Conflictus.csproj",
         "projectName": "Conflictus",
-        "projectPath": "C:\\code\\personal\\Conflictus\\Conflictus\\Conflictus.csproj",
-        "packagesPath": "C:\\Users\\Abrown\\.nuget\\packages\\",
-        "outputPath": "C:\\code\\personal\\Conflictus\\Conflictus\\obj\\",
+        "projectPath": "C:\\code\\projects\\conflictus-api\\Conflictus\\Conflictus.csproj",
+        "packagesPath": "C:\\Users\\abrow\\.nuget\\packages\\",
+        "outputPath": "C:\\code\\projects\\conflictus-api\\Conflictus\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Abrown\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\abrow\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -47,37 +48,29 @@
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[5.0.6, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[5.0.6, )"
             },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[5.0.5, )"
+              "version": "[5.0.6, )"
             },
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
-              "version": "[5.0.5, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.5, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[5.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[5.0.5, )"
+              "version": "[5.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[5.0.6, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -86,6 +79,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.6, )"
             },
             "bootstrap-select": {
               "target": "Package",
@@ -110,7 +107,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

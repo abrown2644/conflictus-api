@@ -28,9 +28,9 @@ namespace Conflictus.Controllers
 
             Wars = await _db.War
                 .Include(w => w.Battles)
-                 .ThenInclude(w => w.SideA.Participants).Distinct()
-                .Include(w => w.Battles)
-                 .ThenInclude(w => w.SideB.Participants).Distinct()
+                // .ThenInclude(w => w.SideA.Participants).Distinct()       disabled this for speed testing.. do i really need these in war endpoint?
+                //.Include(w => w.Battles)
+                // .ThenInclude(w => w.SideB.Participants).Distinct()
                 .ToListAsync();
 
 

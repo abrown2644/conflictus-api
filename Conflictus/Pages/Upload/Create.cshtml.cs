@@ -29,89 +29,89 @@ namespace Conflictus.Pages.Upload
 
         public async Task<IActionResult> OnGet()
         {
-            var json = System.IO.File.ReadAllText("wwwroot/battles.json");
+            //var json = System.IO.File.ReadAllText("wwwroot/battles.json");
 
-            //Battle deserializedBattle = JsonConvert.DeserializeObject<Battle>(json);
-
-
-            var myDeserializedClass = JsonConvert.DeserializeObject<List<Root>>(json);
+            ////Battle deserializedBattle = JsonConvert.DeserializeObject<Battle>(json);
 
 
-            foreach (var item in myDeserializedClass)
-            {
-                Battle battle;
-                var yearArray = item.date.Split('-');
-                string theYear;
-                string theDate = item.date;
-                string finalDate;
-                if (yearArray.Length > 3)
-                {
-                    theYear = "-" + yearArray[1];
-                    theDate = yearArray[1] + "-" + yearArray[2] + "-" + yearArray[3];
-                    var parsedDate = DateTime.Parse(theDate).ToString("dd MMMM yyyy");
-                    finalDate = parsedDate + " BC";
-                }
-                else
-                {
-                    theYear = yearArray[0];
-                    finalDate = DateTime.Parse(theDate).ToString("dd MMMM yyyy");
-                }
-
-                var matchedWar = await _db.War.Where(w => w.Name == item.war).FirstOrDefaultAsync();
-                //var matchedWar = await _db.War.FirstOrDefaultAsync(w => w.Name == item.war);
-
-                //string warName;
-                if (matchedWar == null)
-                {
-                    battle = new Battle
-                    {
-
-                        Title = item.title,
-                        Date = finalDate,
-                        Year = int.Parse(theYear),
-                        Url = item.link,
-                        War = new War
-                        {
-                            Name = item.war
-                        },
-                        Location = new Location
-                        {
-                            Latitude = float.Parse(item.latitude),
-                            Longitude = float.Parse(item.longitude),
-                            HasCoordinates = true
-                        },
-                        SideA = new SideA(),
-                        SideB = new SideB()
-
-                    };
-                }
-                else
-                {
-                    battle = new Battle
-                    {
-
-                        Title = item.title,
-                        Date = finalDate,
-                        Year = int.Parse(theYear),
-                        Url = item.link,
-                        War = await _db.War.FindAsync(matchedWar.Id),
-                        Location = new Location
-                        {
-                            Latitude = float.Parse(item.latitude),
-                            Longitude = float.Parse(item.longitude),
-                            HasCoordinates = true
-                        },
-                        SideA = new SideA(),
-                        SideB = new SideB()
-
-                    };
-                }
+            //var myDeserializedClass = JsonConvert.DeserializeObject<List<Root>>(json);
 
 
+            //foreach (var item in myDeserializedClass)
+            //{
+            //    Battle battle;
+            //    var yearArray = item.date.Split('-');
+            //    string theYear;
+            //    string theDate = item.date;
+            //    string finalDate;
+            //    if (yearArray.Length > 3)
+            //    {
+            //        theYear = "-" + yearArray[1];
+            //        theDate = yearArray[1] + "-" + yearArray[2] + "-" + yearArray[3];
+            //        var parsedDate = DateTime.Parse(theDate).ToString("dd MMMM yyyy");
+            //        finalDate = parsedDate + " BC";
+            //    }
+            //    else
+            //    {
+            //        theYear = yearArray[0];
+            //        finalDate = DateTime.Parse(theDate).ToString("dd MMMM yyyy");
+            //    }
 
-                await _db.Battle.AddAsync(battle);
-                await _db.SaveChangesAsync();
-            }
+            //    var matchedWar = await _db.War.Where(w => w.Name == item.war).FirstOrDefaultAsync();
+            //    //var matchedWar = await _db.War.FirstOrDefaultAsync(w => w.Name == item.war);
+
+            //    //string warName;
+            //    if (matchedWar == null)
+            //    {
+            //        battle = new Battle
+            //        {
+
+            //            Title = item.title,
+            //            Date = finalDate,
+            //            Year = int.Parse(theYear),
+            //            Url = item.link,
+            //            War = new War
+            //            {
+            //                Name = item.war
+            //            },
+            //            Location = new Location
+            //            {
+            //                Latitude = float.Parse(item.latitude),
+            //                Longitude = float.Parse(item.longitude),
+            //                HasCoordinates = true
+            //            },
+            //            SideA = new SideA(),
+            //            SideB = new SideB()
+
+            //        };
+            //    }
+            //    else
+            //    {
+            //        battle = new Battle
+            //        {
+
+            //            Title = item.title,
+            //            Date = finalDate,
+            //            Year = int.Parse(theYear),
+            //            Url = item.link,
+            //            War = await _db.War.FindAsync(matchedWar.Id),
+            //            Location = new Location
+            //            {
+            //                Latitude = float.Parse(item.latitude),
+            //                Longitude = float.Parse(item.longitude),
+            //                HasCoordinates = true
+            //            },
+            //            SideA = new SideA(),
+            //            SideB = new SideB()
+
+            //        };
+            //    }
+
+
+
+            //    await _db.Battle.AddAsync(battle);
+            //    await _db.SaveChangesAsync();
+            //}
 
 
 

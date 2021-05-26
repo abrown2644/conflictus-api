@@ -10,8 +10,7 @@ namespace Conflictus.Areas.Identity.Data
     // Add profile data for application users by adding properties to the ConflictusUser class
     public class ConflictusUser : IdentityUser
     {
-        //[PersonalData]
-        //[Column(TypeName = "nvarchar(100)")]
-        //public string Name { get; set; }
+        [PersonalData]        
+        public string Name { get; set; }
     }
 }

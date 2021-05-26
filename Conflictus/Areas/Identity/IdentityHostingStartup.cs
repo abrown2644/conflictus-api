@@ -17,7 +17,7 @@ namespace Conflictus.Areas.Identity
         {
             builder.ConfigureServices((context, services) => {
                 services.AddDbContext<ConflictusContext>(options =>
-                    options.UseSqlServer(
+                    options.UseNpgsql(
                         context.Configuration.GetConnectionString("ConflictusContextConnection")));
 
                 services.AddDefaultIdentity<ConflictusUser>(options => options.SignIn.RequireConfirmedAccount = true)
