@@ -1418,7 +1418,6 @@ C:\code\projects\conflictus-api\Conflictus\bin\Debug\net5.0\runtimes\win-arm\nat
 C:\code\projects\conflictus-api\Conflictus\bin\Debug\net5.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\code\projects\conflictus-api\Conflictus\bin\Debug\net5.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\code\projects\conflictus-api\Conflictus\bin\Debug\net5.0\runtimes\win-x86\native\e_sqlite3.dll
-C:\code\projects\conflictus-api\Conflictus\obj\Debug\net5.0\Conflictus.csprojAssemblyReference.cache
 C:\code\projects\conflictus-api\Conflictus\obj\Debug\net5.0\Conflictus.GeneratedMSBuildEditorConfig.editorconfig
 C:\code\projects\conflictus-api\Conflictus\obj\Debug\net5.0\Conflictus.AssemblyInfoInputs.cache
 C:\code\projects\conflictus-api\Conflictus\obj\Debug\net5.0\Conflictus.AssemblyInfo.cs
@@ -1508,3 +1507,4 @@ C:\code\projects\conflictus-api\Conflictus\obj\Debug\net5.0\Conflictus.dll
 C:\code\projects\conflictus-api\Conflictus\obj\Debug\net5.0\ref\Conflictus.dll
 C:\code\projects\conflictus-api\Conflictus\obj\Debug\net5.0\Conflictus.pdb
 C:\code\projects\conflictus-api\Conflictus\obj\Debug\net5.0\Conflictus.genruntimeconfig.cache
+C:\code\projects\conflictus-api\Conflictus\obj\Debug\net5.0\Conflictus.csproj.AssemblyReference.cache

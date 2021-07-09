@@ -1,10 +1,31 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Staatliches&display=swap');
 
-/*Gerneral styles*/
+/*themes*/
+:root {
+    --primary-color: #302AE6;
+    --secondary-color: #536390;
+    --font-color: #424242;
+    --bg-color: #fff;
+    --bg-color-2: #dcdcdc3d;
+    --heading-color: #292922;
+    /*font-family: 'Open Sans', sans-serif;*/
+}
+
+[data-theme="dark"] {
+    --primary-color: #9A97F3;
+    --secondary-color: #818cab;
+    --font-color: #e1e1ff;
+    --bg-color: #161625;
+    --bg-color-2: #2e2e45;
+    --heading-color: #818cab;
+}
+
+/*General styles*/
 body {
-    background: url(/img/nam_bg.jpg) 0 0 no-repeat;
-    background-size: cover;
+    /*background: url(/img/nam_bg.jpg) 0 0 no-repeat;
+    background-size: cover;*/
+    background-color: var(--bg-color);
+    color: var(--font-color);
 }
 
 .footer {
@@ -20,7 +41,8 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    /*color: #0366d6;*/
+    color: var(--primary-color);
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -32,12 +54,15 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;       
 }
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
+}
+h2 {
+    font-family: 'Staatliches', cursive;
 }
 
 .border-top {
@@ -48,7 +73,7 @@ html {
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 .25rem .75rem var(--bg-color-2);
 }
 
 button.accept-policy {
@@ -76,8 +101,24 @@ body {
 }
 
 /*form styling*/
+.bootstrap-tagsinput {
+    background-color: var(--bg-color-2) !important;
+    color: var(--font-color) !important;
+}
+.form-control {
+    background-color: var(--bg-color-2) !important;
+    color: var(--font-color) !important;
+}
+.btn {
+    width: 100%;
+}
+.dropdown-toggle {
+    background-color: var(--bg-color-2) !important;
+    color: var(--font-color) !important;
+}
+
 .form-title-large {
-    font-weight:600;
+    font-weight: 600;
 }
 .form-title-small {
     font-size:.9em;
@@ -111,6 +152,58 @@ body {
     width: 16px;
 }
 
+/*tables*/
+.table {
+    background-color: unset !important;
+    color: unset !important;
+}
+.table.dataTable tbody tr {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+.table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
+    background-color: var(--bg-color) !important;
+    color: var(--font-color) !important;
+}
+.table.dataTable.stripe tbody tr.even, table.dataTable.display tbody tr.even {
+    background-color: var(--bg-color-2);
+    color: var(--font-color);
+}
+    .table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd:hover {
+        background-color: var(--bg-color) !important;
+        color: var(--font-color) !important;
+    }
+
+    .table.dataTable.stripe tbody tr.even, table.dataTable.display tbody tr.even:hover {
+        background-color: var(--bg-color-2);
+        color: var(--font-color);
+    }
+
+.table.dataTable.display tbody tr.odd > .sorting_1, table.dataTable.order-column.stripe tbody tr.odd > .sorting_1 {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+.table.dataTable.display tbody tr.even > .sorting_1, table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
+    background-color: var(--bg-color-2);
+    color: var(--font-color);
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    background-color: var(--bg-color) !important;
+    color: var(--font-color) !important;
+}
+    .dataTables_wrapper .dataTables_length select {
+        background-color: var(--bg-color-2) !important;
+        color: var(--font-color) !important;
+    }
+    .dataTables_wrapper .dataTables_filter input {
+        background-color: var(--bg-color-2) !important;
+        color: var(--font-color) !important;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        color: var(--font-color) !important;
+    }
 
 /* War */
 .wars {
@@ -145,7 +238,7 @@ body {
     justify-content: space-between;
 }
 .war_image {
-    width: 100%;
+    max-width: 600px;
 }
 .war_url {
     display: flex;
@@ -175,6 +268,7 @@ body {
 .bootstrap-tagsinput input {
     border: none !important;
     outline: none !important;
+    color: var(--font-color) !important;
 }
 .commandertags .label-info {
  background: royalblue;
@@ -245,3 +339,65 @@ body {
 .link {
     align-self: flex-end;
 }
+
+/*theme toggle*/
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    em
+
+{
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+    .theme-switch input {
+        display: none;
+    }
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+    .slider:before {
+        background-color: #fff;
+        bottom: 4px;
+        content: "";
+        height: 26px;
+        left: 4px;
+        position: absolute;
+        transition: .4s;
+        width: 26px;
+    }
+
+input:checked + .slider {
+    background-color: #66bb6a;
+}
+
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+
+.slider.round {
+    border-radius: 34px;
+}
+
+    .slider.round:before {
+        border-radius: 50%;
+    }

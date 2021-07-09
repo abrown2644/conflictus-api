@@ -12,8 +12,8 @@ function loadDataTable() {
             "datatype": "json"
         },
         "columns": [
-            { "data": "date", "width": "10%" },
-            { "data": "name", "width": "40%" },            
+            { "data": "name", "width": "30%" },
+            { "data": "date", "width": "20%" },            
             {
                 "data": "id",
                 "render": function (data) {
@@ -36,7 +36,7 @@ function loadDataTable() {
 function Delete(url) {
     Swal.fire({
         title: "Wait! Stop!",
-        text: "Deleting this war will ALSO delete every battle associated with it!",
+        text: "Deleting this war will also delete EVERY battle associated with it!",
         icon: "warning",
         buttons: true,
         showCancelButton: true,

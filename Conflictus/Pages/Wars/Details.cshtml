@@ -10,10 +10,14 @@
 
 <p>Details</p>
 
-<div>
-    <h2>@Model.War.Name</h2>
-    <hr />
-    <div>
+<div>    
+    <div style="
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;">
+        <h2>@Model.War.Name</h2>
+        <hr />
         <img class="war_image" src="@Model.War.ImageUrl" />
     </div>
     <div>
